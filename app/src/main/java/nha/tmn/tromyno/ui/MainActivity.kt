@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         bottomNavView = findViewById(R.id.bottomNavView)
+        replaceFragment(homeFragment)
         setUpBottomNavView()
     }
 

@@ -7,8 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import nha.tmn.tromyno.R
 
-class ApodFragment : Fragment() {
-
+class NeowsFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -18,6 +17,6 @@ class ApodFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_apod, container, false)
+        return inflater.inflate(R.layout.fragment_neows, container, false)
     }
 }
