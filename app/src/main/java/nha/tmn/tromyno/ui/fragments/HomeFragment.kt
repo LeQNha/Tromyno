@@ -1,6 +1,8 @@
 package nha.tmn.tromyno.ui.fragments
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +17,7 @@ class HomeFragment : Fragment() {
     private lateinit var homeFragmentTabLayout : TabLayout
     private lateinit var homeFragmentViewPager2 : ViewPager2
     private lateinit var viewPagerAdapter: ViewPagerAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -23,7 +26,7 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        // Inflate the layout for this fragment\
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
@@ -45,4 +48,5 @@ class HomeFragment : Fragment() {
             }
         }.attach()
     }
+
 }

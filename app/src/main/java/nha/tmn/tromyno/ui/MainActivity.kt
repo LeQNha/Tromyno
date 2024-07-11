@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         bottomNavView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.homeFragmentNav -> {
-                    replaceFragment(homeFragment)
+                    replaceFragment(HomeFragment())
                     true
                 }
 
