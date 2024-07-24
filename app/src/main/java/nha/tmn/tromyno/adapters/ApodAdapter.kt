@@ -3,6 +3,7 @@ package nha.tmn.tromyno.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.AsyncListDiffer
@@ -50,6 +51,6 @@ class ApodAdapter : RecyclerView.Adapter<ApodAdapter.ApodViewHolder>() {
         val apodRvThumb = itemView.findViewById<ImageView>(R.id.apodRvThumb)
         val apodRvTitle = itemView.findViewById<TextView>(R.id.apodRvTitle)
         val apodRvDate = itemView.findViewById<TextView>(R.id.apodRvDate)
-        val apodRvSaveBtn = itemView.findViewById<TextView>(R.id.apodRvSaveBtn)
+        val apodRvSaveBtn = itemView.findViewById<ImageButton>(R.id.apodRvSaveBtn)
     }
 }

@@ -10,6 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 import nha.tmn.tromyno.R
 import nha.tmn.tromyno.adapters.ApodAdapter
 import nha.tmn.tromyno.api.RetrofitInstance
+import nha.tmn.tromyno.models.ApodResponse
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class ApodFragment : Fragment() {
 
@@ -34,6 +38,8 @@ class ApodFragment : Fragment() {
         apodRv = view.findViewById(R.id.apodRv)
 
         setUpApodRv()
+
+        getApods()
     }
 
     private fun setUpApodRv(){
@@ -43,7 +49,25 @@ class ApodFragment : Fragment() {
         }
     }
 
-    suspend fun getApods(){
-        RetrofitInstance.apodApi.getApod("2024-07-20", "2024-07-24")
+    fun getApods(){
+//        RetrofitInstance.apodApi.getApod("2024-07-20", "2024-07-24")
+
+        RetrofitInstance.apodApi.getApod("2024-07-20", "2024-07-24").enqueue(object : Callback<List<ApodResponse>> {
+            override fun onResponse(call: Call<List<ApodResponse>>, response: Response<List<ApodResponse>>) {
+                if (response.isSuccessful) {
+                    val apodList = response.body()
+
+                    apodAdapter.differ.submitList(apodList)
+//                    // Hiển thị dữ liệu từ API trong UI
+//                    apodList?.forEach { apod ->
+//
+//                    }
+                }
+            }
+
+            override fun onFailure(call: Call<List<ApodResponse>>, t: Throwable) {
+                // Xử lý lỗi khi gọi API thất bại
+            }
+        })
     }
 }
