@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import nha.tmn.tromyno.R
 import nha.tmn.tromyno.adapters.ApodAdapter
+import nha.tmn.tromyno.api.RetrofitInstance
 
 class ApodFragment : Fragment() {
 
@@ -31,6 +32,8 @@ class ApodFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         apodRv = view.findViewById(R.id.apodRv)
+
+        setUpApodRv()
     }
 
     private fun setUpApodRv(){
@@ -38,5 +41,9 @@ class ApodFragment : Fragment() {
             adapter = apodAdapter
             layoutManager = LinearLayoutManager(activity)
         }
+    }
+
+    suspend fun getApods(){
+        RetrofitInstance.apodApi.getApod("2024-07-20", "2024-07-24")
     }
 }

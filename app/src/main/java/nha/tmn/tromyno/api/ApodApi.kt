@@ -10,7 +10,7 @@ interface ApodApi {
     @GET("planetary/apod")
     suspend fun getApod(
         @Query("start_date")
-        startDate: String?,
+        startDate: String = "2024-07-20",
 
         @Query("end_date")
         endDate: String?,
