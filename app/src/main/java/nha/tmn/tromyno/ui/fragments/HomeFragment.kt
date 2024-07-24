@@ -14,8 +14,8 @@ import nha.tmn.tromyno.R
 import nha.tmn.tromyno.adapters.ViewPagerAdapter
 
 class HomeFragment : Fragment() {
-    private lateinit var homeFragmentTabLayout : TabLayout
-    private lateinit var homeFragmentViewPager2 : ViewPager2
+    private lateinit var homeFragmentTabLayout: TabLayout
+    private lateinit var homeFragmentViewPager2: ViewPager2
     private lateinit var viewPagerAdapter: ViewPagerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +26,7 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment\
+        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
@@ -48,5 +48,4 @@ class HomeFragment : Fragment() {
             }
         }.attach()
     }
-
 }

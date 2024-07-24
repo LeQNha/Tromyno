@@ -13,3 +13,5 @@
 .externalNativeBuild
 .cxx
 local.properties
+app/src/main/java/nha/tmn/tromyno/utils/Constants.kt
+**/utils/Constants.kt

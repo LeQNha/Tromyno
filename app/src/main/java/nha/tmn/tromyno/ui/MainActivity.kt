@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
                     replaceFragment(savedFragment)
                     true
                 }
+
                 else -> false
             }
         }

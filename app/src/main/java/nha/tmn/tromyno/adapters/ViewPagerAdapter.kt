@@ -12,21 +12,34 @@ import nha.tmn.tromyno.ui.fragments.tabFragments.NeowsFragment
 class ViewPagerAdapter(fragment: Fragment) :
     FragmentStateAdapter(fragment) {
 
-    private val apodFragment = ApodFragment()
-    private val epicFragment = EpicFragment()
-    private val mrpFragment = MrpFragment()
-    private val neowsFragment = NeowsFragment()
+//    private val apodFragment = ApodFragment()
+//    private val epicFragment = EpicFragment()
+//    private val mrpFragment = MrpFragment()
+//    private val neowsFragment = NeowsFragment()
+
+    private val fragmentList =
+        listOf<Fragment>(
+            ApodFragment(),
+            EpicFragment(),
+            MrpFragment(),
+            NeowsFragment()
+        )
+
     override fun getItemCount(): Int {
-        return 4
+        return fragmentList.size
     }
 
-    override fun createFragment(position: Int): Fragment {
-        return when (position) {
-            0 -> apodFragment
-            1 -> neowsFragment
-            2 -> mrpFragment
-            3 -> epicFragment
-            else -> apodFragment
-        }
-    }
+//    override fun createFragment(position: Int): Fragment {
+//        return when (position) {
+//            0 -> ApodFragment()
+//            1 -> NeowsFragment()
+//            2 -> MrpFragment()
+//            3 -> EpicFragment()
+//            else -> ApodFragment()
+//        }
+//    }
+
+    override fun createFragment(position: Int): Fragment = fragmentList[position]
+
+
 }
