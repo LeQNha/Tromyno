@@ -19,6 +19,7 @@ class ApodAdapter : RecyclerView.Adapter<ApodAdapter.ApodViewHolder>() {
         return ApodViewHolder(itemView)
     }
 
+    //Use DiffUtil to only replace what changed
     val differCallback = object : DiffUtil.ItemCallback<ApodResponse>() {
         override fun areItemsTheSame(oldItem: ApodResponse, newItem: ApodResponse): Boolean {
             return oldItem.url == newItem.url
