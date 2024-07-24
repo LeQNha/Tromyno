@@ -33,6 +33,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //Set up
         homeFragmentTabLayout = view.findViewById(R.id.homeFragmetTabLayout)
         homeFragmentViewPager2 = view.findViewById(R.id.homeFragmentViewPager2)
         viewPagerAdapter = ViewPagerAdapter(this)
